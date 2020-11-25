@@ -10,6 +10,9 @@ namespace LinqFundamentals
     {
         static void Main(string[] args)
         {
+
+
+
             var developers = new[]
             {
                 new Employee {Id = 1, Name = "Leslie"},
@@ -22,16 +25,11 @@ namespace LinqFundamentals
                 new Employee{ Id = 3, Name = "Alex"}
             };
 
-            foreach (var employee in developers.Where(e => e.Name.StartsWith("S")))
+            foreach (var employee in developers.Where(e => e.Name.StartsWith("L")).OrderByDescending(e => e.Name))
             {
                 Console.WriteLine(employee.Name);
             }
 
-        }
-
-        private static bool NameStartsWithS(Employee employee)
-        {
-            return employee.Name.StartsWith("S");
         }
     }
 }
